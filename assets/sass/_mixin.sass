@@ -1,0 +1,37 @@
+////// FONT /////////////////////////////////////////////////////////////////
+@mixin font($fz: 16px, $lh: normal, $fw: 400,  $color: #000)
+  font-size: $fz
+  line-height: $lh
+  font-weight: $fw
+  color: $color
+////// FLEX /////////////////////////////////////////////////////////////////
+@mixin flex($direction: row, $justify: flex-start, $align: stretch)
+  display: flex
+  flex-direction: $direction
+  justify-content: $justify
+  align-items: $align
+
+////// MAIN BUTTON /////////////////////////////////////////////////////////////////
+@mixin main-btn($max-width)
+  width: 100%
+  max-width: $max-width
+  transition: background-color .5s cubic-bezier(0.49,-0.11, 0.59, 1.07)
+  overflow: hidden
+  position: relative
+  background: linear-gradient(108.84deg, #E05368 10.03%, #A752D2 57.13%, #657AF9 86.28%)
+  border-radius: 12px
+  @include flex(row, center, center)
+  gap: 10px
+  padding: 14px
+  @include font(16px, 22px, 600, #fff)
+////// FIT IMAGE /////////////////////////////////////////////////////////////////
+@mixin fit($fit , $position)
+  width: 100%
+  height: 100%
+  object-fit: $fit
+  object-position: $position
+
+////// MEDIA WIDTH BREAKPOINTS PX /////////////////////////////////////////////////////////////////
+@mixin media($size)
+  @media (max-width: $size)
+    @content
