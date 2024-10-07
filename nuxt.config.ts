@@ -1,26 +1,11 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  ssr: false,
-  devtools: { enabled: true },
-  css: ['~/assets/sass/main.sass'],
-  modules: ['@pinia/nuxt'],
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-    head: {
-      title: 'My App',
-      meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-      ],
-      script: [
-      ],
-      link: [
-      ],
-      noscript: [
-      ]
-    }
+  compatibilityDate: "2024-04-03",
+  modules: ["@pinia/nuxt", "@nuxt/ui", "@nuxtjs/tailwindcss"],
+  colorMode: {
+    preference: 'light'
   },
-
-  // plugins: [
-  //   { src: "~/plugins/aos" },
-  // ],
-})
+  css: ["@/assets/scss/main.scss"],
+  devtools: { enabled: true },
+  ssr: false,
+});

@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $pr-font;
+  list-style: none;
+  text-decoration: none;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  background: #f0f6f8;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: $pr-color;
+  border-radius: 50px;
+}
+html {
+  height: 100%;
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+  @include media($xxl) {
+    font-size: calc($font-size-base * 0.95);
+  }
+  @include media($xl) {
+    font-size: calc($font-size-base * 0.9);
+  }
+  @include media($lg) {
+    font-size: calc($font-size-base * 0.8);
+  }
+  @include media($md) {
+    font-size: calc($font-size-base * 0.75);
+  }
+  @include media($sm) {
+    font-size: calc($font-size-base * 0.7);
+  }
+  @include media($xs) {
+    font-size: calc($font-size-base * 0.65);
+  }
+}
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+body {
+  background: #fff;
+  color: #000;
+}
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: $xxl) {
+    max-width: 1280px !important;
+  }
+
+  @media (max-width: $xl) {
+    max-width: 1024px !important;
+  }
+
+  @media (max-width: $lg) {
+    max-width: 768px !important;
+  }
+
+  @media (max-width: $md) {
+    max-width: 640px !important;
+  }
+
+  @media (max-width: $sm) {
+    padding: 0 12px;
+    max-width: 450px !important;
+  }
+
+  @media (max-width: $xs) {
+    max-width: 100% !important;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  -moz-appearance: textfield;
+}
+input[type="radio"] {
+  appearance: none;
+  cursor: pointer;
+  display: flex;
+  border: 1px solid $pr-color;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  clip-path: polygon(17% 30%, 42% 57%, 86% 18%, 97% 28%, 41% 79%, 5% 41%);
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: #000;
+}
+
+input[type="radio"]:checked {
+  border: 1px solid $pr-color;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+  background: $pr-color;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  display: none;
+}

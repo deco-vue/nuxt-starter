@@ -1,1 +1,0 @@
-export const usePayment = () => useState('isPayment', () => false)
